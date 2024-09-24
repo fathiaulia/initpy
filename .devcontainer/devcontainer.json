@@ -1,0 +1,42 @@
+{
+  "build": {
+     "dockerfile": "Dockerfile",
+     "context": "../"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aaron-bond.better-comments",
+        "charliermarsh.ruff",
+        "christian-kohler.path-intellisense",
+        "GitHub.codespaces",
+        "Gruntfuggly.todo-tree",
+        "KevinRose.vsc-python-indent",
+        "marimo-team.vscode-marimo",
+        "mhutchie.git-graph",
+        "ms-python.python",
+        "usernamehw.errorlens",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "python.REPL.enableREPLSmartSend": true,
+        "python.terminal.launchArgs": [
+          "-m",
+          "IPython",
+          "--no-autoindent",
+          "--InteractiveShellApp.exec_lines='%load_ext autoreload'",
+          "--InteractiveShellApp.exec_lines='%autoreload 2'"
+        ],
+        "ruff.nativeServer": "auto"
+      }
+    }
+  },
+  "remoteEnv": {
+    "POETRY_VIRTUALENVS_CREATE": "true",
+    "POETRY_VIRTUALENVS_IN_PROJECT": "true"
+  },
+  "postCreateCommand": "python -c 'print(\"Hello world!\")'"
+}
